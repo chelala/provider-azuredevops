@@ -1,38 +1,38 @@
-#apiVersion: project.chelala.one/v1alpha1
-#kind: Project
-#metadata:
-#  labels:
-#    testing.upbound.io/example-name: example
-#  annotations:
-#    crossplane.io/external-name: "Solicitud Cliente Crédito"
-#  name: solicitud-cliente-credito
-#spec:
-#  managementPolicies:
-#    - Observe
-#  deletionPolicy: Orphan
-#  forProvider:
-#    name: "Solicitud Cliente Crédito"
-#---
-#apiVersion: gitrepository.chelala.one/v1alpha1
-#kind: Repository
-#metadata:
-#  annotations:
-#    crossplane.io/external-name: "Solicitud Cliente Crédito/solcliente-web"
-#  labels:
-#    testing.upbound.io/example-name: example
-#  name: solcliente-web
-#spec:
-#  managementPolicies:
-#    - Observe
-#  deletionPolicy: Orphan
-#  forProvider:
-#    initialization:
-#      - initType: Uninitialized
-#    name: "Solicitud Cliente Crédito/solcliente-web"
-#    projectIdSelector:
-#      matchLabels:
-#        testing.upbound.io/example-name: example
-#---
+apiVersion: project.chelala.one/v1alpha1
+kind: Project
+metadata:
+  labels:
+    testing.upbound.io/example-name: example
+  annotations:
+    crossplane.io/external-name: "Solicitud Cliente Crédito"
+  name: solicitud-cliente-credito
+spec:
+  managementPolicies:
+    - Observe
+  deletionPolicy: Orphan
+  forProvider:
+    name: "Solicitud Cliente Crédito"
+---
+apiVersion: gitrepository.chelala.one/v1alpha1
+kind: Repository
+metadata:
+  annotations:
+    crossplane.io/external-name: "Solicitud Cliente Crédito/solcliente-web"
+  labels:
+    testing.upbound.io/example-name: example
+  name: solcliente-web
+spec:
+  managementPolicies:
+    - Observe
+  deletionPolicy: Orphan
+  forProvider:
+    initialization:
+      - initType: Uninitialized
+    name: "Solicitud Cliente Crédito/solcliente-web"
+    projectIdSelector:
+      matchLabels:
+        testing.upbound.io/example-name: example
+---
 apiVersion: gitrepositorybranch.chelala.one/v1alpha1
 kind: RepositoryBranch
 metadata:
@@ -43,38 +43,9 @@ spec:
   forProvider:
     name: example
     refBranch: develop
-    repositoryId: 5ab6d388-be22-4a6d-9641-e5d7279b7d33
-#    repositoryIdSelector:
-#      matchLabels:
-#        testing.upbound.io/example-name: example
+    repositoryIdSelector:
+      matchLabels:
+        testing.upbound.io/example-name: example
 
-
-#apiVersion: project.chelala.one/v1alpha1
-#kind: Project
-#metadata:
-#  labels:
-#    testing.upbound.io/example-name: example
-#  name: example
-#spec:
-#  deletionPolicy: "Orphan"
-#  forProvider:
-#    description: Managed by Terraform
-#    features:
-#      artifacts: disabled
-#      testplans: disabled
-#    name: "Solicitud Cliente Crédito"
-#    versionControl: Git
-#    visibility: private
-#---
-#apiVersion: gitrepositorybranch.chelala.one/v1alpha1
-#kind: RepositoryBranch
-#metadata:
-#  name: example-branch-name
-#spec:
-#  deletionPolicy: "Orphan"
-#  forProvider:
-#    name: example-branch-name
-#    refBranch: develop
-#    repositoryId: 5ab6d388-be22-4a6d-9641-e5d7279b7d33
 
 

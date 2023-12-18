@@ -82,6 +82,7 @@ type RepositoryBranchParameters struct {
 
 	// The ID of the repository the branch is created against.
 	// +crossplane:generate:reference:type=github.com/chelala/provider-azuredevops/apis/gitrepository/v1alpha1.Repository
+	// +crossplane:generate:reference:extractor=github.com/chelala/provider-azuredevops/apis/gitrepository/v1alpha1.ExtractResourceID()
 	// +kubebuilder:validation:Optional
 	RepositoryID *string `json:"repositoryId,omitempty" tf:"repository_id,omitempty"`
 

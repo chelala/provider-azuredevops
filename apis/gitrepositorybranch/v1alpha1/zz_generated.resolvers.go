@@ -38,7 +38,7 @@ func (mg *RepositoryBranch) ResolveReferences(ctx context.Context, c client.Read
 
 	rsp, err = r.Resolve(ctx, reference.ResolutionRequest{
 		CurrentValue: reference.FromPtrValue(mg.Spec.ForProvider.RepositoryID),
-		Extract:      reference.ExternalName(),
+		Extract:      v1alpha1.ExtractResourceID(),
 		Reference:    mg.Spec.ForProvider.RepositoryIDRef,
 		Selector:     mg.Spec.ForProvider.RepositoryIDSelector,
 		To: reference.To{
