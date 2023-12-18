@@ -4,6 +4,7 @@ import (
 	"github.com/crossplane/upjet/pkg/config"
 )
 
+// Configure configures the azuredevops_git_repository_branch resource.
 func Configure(p *config.Provider) {
 	p.AddResourceConfigurator("azuredevops_git_repository_branch", func(r *config.Resource) {
 		// We need to override the default group that upjet generated for

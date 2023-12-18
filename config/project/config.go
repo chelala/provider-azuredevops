@@ -2,7 +2,7 @@ package project
 
 import "github.com/crossplane/upjet/pkg/config"
 
-// Configure configures individual resources by adding custom ResourceConfigurators.
+// Configure configures the azuredevops_project resource.
 func Configure(p *config.Provider) {
 	p.AddResourceConfigurator("azuredevops_project", func(r *config.Resource) {
 		// We need to override the default group that upjet generated for
